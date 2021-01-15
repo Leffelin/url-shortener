@@ -3,8 +3,8 @@ const router = express.Router();
 const { body, param, validationResult } = require("express-validator");
 const urlController = require("./url-controller");
 
-const validateViewModel = (method) => {
-  switch (method) {
+const validateViewModel = (viewModelName) => {
+  switch (viewModelName) {
     case "saveUrl": {
       return [body("url", "The url to shorten, was not supplied.").exists()];
     }
