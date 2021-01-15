@@ -49,6 +49,11 @@ const getUrl = (req, res, next) => {
     const { id } = req.params;
     const url = urlService.getUrlById(id);
 
+    if (!url) {
+      res.status(404).send("Not found");
+      return;
+    }
+
     res.set("Location", url);
     res.status(301).send();
   } catch (err) {

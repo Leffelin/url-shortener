@@ -1,12 +1,12 @@
-var express = require("express");
+const express = require("express");
 
-var cookieParser = require("cookie-parser");
-var bodyParser = require("body-parser");
-var logger = require("morgan");
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+const logger = require("morgan");
 
-var urlsRouter = require("./urls/url-api");
+const urlsRouter = require("./urls/url-api");
 
-var app = express();
+const app = express();
 
 app.use(logger("dev"));
 app.use(express.json());
